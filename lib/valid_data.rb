@@ -1,5 +1,5 @@
 require "valid_data/version"
 
 module ValidData
-  # Your code goes here...
+  require 'valid_data/railtie' if defined?(Rails)
 end

@@ -1,3 +1,7 @@
+task :foo do
+  puts "bar"
+end
+
 namespace :valid_data do
   namespace :db do
     namespace :data do
