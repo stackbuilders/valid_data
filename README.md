@@ -24,10 +24,9 @@ Or install it yourself as:
 
 1. Add `ValidData` to your project's `Gemfile`:
 
-```ruby
-gem 'valid_data'
-```
-2. Invoke the `Raketask` that is now at your fingertips:
+`gem 'valid_data'`
+
+1. Invoke the `Raketask` that is now at your fingertips:
 
 ```bash
 rake valid_data:db:data:check

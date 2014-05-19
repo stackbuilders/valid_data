@@ -20,10 +20,6 @@ namespace :db do
       # load all models
       Rails.application.eager_load!
 
-      # header
-      puts "%s | %s | %s" % ["Model", "Invalid", "Total"].map{|s| s.ljust(padding) }
-      puts "-" * 3 * padding
-
       # body
       puts ActiveRecord::Base.descendants.reject{ |klass|
         # Ignore Globalize's translation tables
