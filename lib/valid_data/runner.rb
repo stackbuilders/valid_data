@@ -1,18 +1,23 @@
 module ValidData
   class Runner
+    # Result serves as a shim (shim, yea?) between Runner and Printer
+    Result = Struct.new(:name, :invalid_count, :total)
+
     def initialize(padding, adapter)
       @padding = padding.to_i
       @adapter = adapter
-      @printer = CliPrinter.new(padding.to_i)
+      @printer = Printer.new(padding.to_i)
     end
 
     def data
       models.map do |klass, count = 0|
+        # Skip models without tables backing them
         next if klass.abstract_class?
-        # Count invalid models
-        klass.find_each{ |model| count += 1 if model.invalid? }
-        #binding.pry if klass.name =~ /Ad\z/
-        printer.print(klass, count)
+        # For each class, find & count invalid rows in the DB
+        klass.find_each{ |model| count += 1 if Validity.new(model).valid? }
+        # Instantiate a Result instance to remove Printer dependency
+        result = Result.new(klass.name, count, klass.count)
+        printer.print(result)
       end
     end
 

@@ -7,5 +7,9 @@ module ValidData
     def valid?
       instance.valid?
     end
+
+    private
+
+    attr_reader :instance
   end
 end

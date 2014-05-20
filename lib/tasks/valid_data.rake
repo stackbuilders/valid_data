@@ -1,7 +1,11 @@
 desc "Check for invalid records in the database"
 task :validate_records, [:padding] => [:environment] do |t, args|
-  # load all models
+  # Load all models
   Rails.application.eager_load!
 
-  ValidData::Runner.new(args[:padding], ActiveRecord::Base).data
+  # Set padding if not passed in ARGV
+  padding = args[:padding] || 30
+
+  # Instantiate the Runner and call #data on it
+  ValidData::Runner.new(padding, ActiveRecord::Base).data
 end
