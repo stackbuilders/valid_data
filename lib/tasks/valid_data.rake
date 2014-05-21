@@ -7,5 +7,5 @@ task :validate_records, [:padding] => [:environment] do |t, args|
   padding = args[:padding] || 30
 
   # Instantiate the Runner and call #data on it
-  ValidData::Runner.new(padding, ActiveRecord::Base).data
+  ValidData::Runner.new(padding, ActiveRecord::Base).run
 end

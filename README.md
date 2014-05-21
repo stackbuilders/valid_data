@@ -1,10 +1,8 @@
 # TODO
 
-* Define a Raketask in OOP way
-* The executable should add that Raketask to the project's available Raketasks
-* Rakefile should end up with a single task that invokes desired behavior
-  * e.g. `ValidData.new.validate`
-  * With that, write to the `bin` file to simply run that Raketask inside the project the gem is being bundled into
+* Add ParallelRunner, making use of Thread and Queue
+* Re-introduce `puts` to STDOUT (it's gone right now...)
+* Add `rake notes` task like Rails has to find pending `TODO`s in code
 
 ## Installation
 
@@ -22,15 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
-1. Add `ValidData` to your project's `Gemfile`:
-
-`gem 'valid_data'`
-
-1. Invoke the `Raketask` that is now at your fingertips:
+Invoke the `Rake Task` that is now at your fingertips:
 
 ```bash
-rake valid_data:db:data:check
+rake validate_records[30]
 ```
+... where the `30` refers to the amount of extra padding in the printed output.
 
 ## Contributing
 
