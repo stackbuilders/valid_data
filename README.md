@@ -1,9 +1,3 @@
-# TODO
-
-* Add ParallelRunner, making use of Thread and Queue
-* Re-introduce `puts` to STDOUT (it's gone right now...)
-* Add `rake notes` task like Rails has to find pending `TODO`s in code
-
 ## Installation
 
 Add this line to your application's Gemfile:

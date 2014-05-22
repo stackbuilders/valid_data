@@ -2,7 +2,6 @@ require "valid_data/version"
 require "valid_data/runner"
 require "valid_data/printer"
 require "valid_data/collector"
-require "valid_data/parallel_runner"
 
 module ValidData
   require 'valid_data/railtie' if defined?(Rails)
