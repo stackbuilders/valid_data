@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/stackbuilders/valid_data.png?branch=master)](https://travis-ci.org/stackbuilders/valid_data)
+
 ## Installation
 
 Add this line to your application's Gemfile:
