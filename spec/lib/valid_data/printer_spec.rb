@@ -7,7 +7,7 @@ module ValidData
     describe "#print" do
       it "writes each row of the table with the appropriate padding" do
         result = Result.new("User", 5, 20)
-        expect(printer.print(result)).to eq " User |     5 |    20" 
+        expect(printer.print(result)).to eq "User  | 5     | 20   "
       end
     end
 
