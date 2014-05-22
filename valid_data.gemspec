@@ -25,8 +25,8 @@ notifying you exactly how many rows in your models are invalid for each model.
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency "rails"
+  spec.add_development_dependency "rake", "~> 0"
+  spec.add_development_dependency "rspec", "~> 0"
+  spec.add_development_dependency "pry", "~> 0"
+  spec.add_development_dependency "rails", ">= 3.0"
 end
