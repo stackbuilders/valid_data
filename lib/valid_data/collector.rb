@@ -8,19 +8,21 @@ module ValidData
       return enum_for(:each) unless block_given?
 
       models.each { |model|
-        result = compute_result(model)
-        yield result
+        yield compute_result(model)
       }
     end
 
     def compute_result(model)
-      #NOTE: The following doesn't work for Rails < 4.0!
-      #Result.new(model.name, model.find_each.select(&:valid?), model.count)
-      invalid_count = 0
+      invalid_count, total = 0, 0
+
       model.find_each do |m|
         invalid_count += 1 if m.invalid?
+        total += 1
       end
-      Result.new(model.name, invalid_count, model.count)
+
+      Result.new(model.name, invalid_count, total)
+      #NOTE: The following line doesn't work for Rails < 4.0!
+      #Result.new(model.name, model.find_each.select(&:valid?), model.count)
     end
 
     private

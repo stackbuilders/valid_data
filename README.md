@@ -27,6 +27,18 @@ rake validate_records[30]
 ```
 ... where the `30` refers to the amount of extra padding in the printed output.
 
+You should expect to see some output like this:
+
+```bash
+Model                          | Invalid                        | Total
+------------------------------------------------------------------------------------------
+MakeNegativeTemplate           | 0                              | 0
+KeywordSet                     | 0                              | 1
+Placeholder                    | 0                              | 5
+User                           | 0                              | 0
+Ad                             | 1                              | 1
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/mecampbellsoup/valid_data/fork )

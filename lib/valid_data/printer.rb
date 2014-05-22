@@ -7,11 +7,11 @@ module ValidData
     end
 
     def print(result)
-      "%##{padding}{name} | %##{padding}{invalid_count} | %##{padding}{total}" % result.to_h
+      "%s | %s | %s" % [result.name, result.invalid_count, result.total].map{ |cell| cell.to_s.ljust(padding) }
     end
 
     def header
-      "%s | %s | %s" % ["Model", "Invalid", "Total"].map{ |s| s.rjust(padding) } +
+      "%s | %s | %s" % ["Model", "Invalid", "Total"].map{ |title| title.ljust(padding) } +
       "\n" + "-" * 3 * padding
     end
 
