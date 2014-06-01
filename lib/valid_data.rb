@@ -1,5 +1,6 @@
 require "valid_data/version"
 require "valid_data/runner"
+require "valid_data/parallel_runner"
 require "valid_data/printer"
 require "valid_data/collector"
 
