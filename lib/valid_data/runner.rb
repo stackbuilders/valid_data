@@ -21,9 +21,9 @@ module ValidData
     end
 
     def models
-      adapter.descendants.reject do |klass|
+      adapter.descendants.reject { |klass|
         klass.name.include?("::Translation") || klass.abstract_class?
-      end
+      }.sort_by(&:count)
     end
   end
 end
