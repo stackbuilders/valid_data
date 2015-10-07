@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/stackbuilders/valid_data.png?branch=master)](https://travis-ci.org/stackbuilders/valid_data)
+[![Code Climate](https://codeclimate.com/github/stackbuilders/valid_data/badges/gpa.svg)](https://codeclimate.com/github/stackbuilders/valid_data)
 
 ## Installation
 
